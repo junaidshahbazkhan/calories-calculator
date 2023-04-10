@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import CaloriesCounter from "./components/ColoriesCounter";
+import { Grid } from "@mantine/core";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <Grid>
+        <Grid.Col span={4}></Grid.Col>
+        <Grid.Col
+          span={4}
+          style={{
+            height: "100vh",
+            display: "flex",
+            justifyContent: "center",
+            flexDirection: "column",
+          }}
         >
-          Learn React
-        </a>
-      </header>
+          <CaloriesCounter />
+        </Grid.Col>
+        <Grid.Col span={4}></Grid.Col>
+      </Grid>
     </div>
   );
-}
+};
 
 export default App;
